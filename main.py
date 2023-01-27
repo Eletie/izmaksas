@@ -18,14 +18,11 @@ class Rekins:
 
 class Klients1(Rekins):
   def __init__(self):
-    print("Ievadi savu vardu???: ")
-    self.klients = str(input())
-    print("Ievadi veltījumu: ")
-    self.veltijums = str(input())
-    print("Ievadi izmēru(veselu skaitli):")
-    self.izmers = int(input())
-    print("Izmantojamais materiāls:")
-    self.materials = str(input())
+    self.klients = str(input("Ievadi savu vardu: "))
+    self.veltijums = str(input("Ievadi veltijumu: "))
+    self.izmers = int(input("Ievadi izmeru(veselu skaitli): "))
+    self.materials = str(input("Ievadi izmantojamo materialu: "))
 
+Klients1 = Klients1()
 
 #Vieta, kur nolikt kursoru:       
