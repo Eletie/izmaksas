@@ -18,10 +18,30 @@ class Rekins:
 
 class Klients1(Rekins):
   def __init__(self):
-    self.klients = str(input("Ievadi savu vardu: "))
-    self.veltijums = str(input("Ievadi veltijumu: "))
-    self.izmers = int(input("Ievadi izmeru(veselu skaitli): "))
-    self.materials = str(input("Ievadi izmantojamo materialu: "))
+    while True:
+       self.klients = input("Ievadi savu vardu: ")
+       if all(x.isalpha() or x.isspace() for x in self.klients):
+           break
+       else:
+           print("Ievadu savu VARDU ar BURTIEM >:(")
+    
+    while True:
+       self.veltijums = input("Ievadi veltijumu: ")
+       if all(x.isalpha() or x.isspace() for x in self.veltijums):
+           break
+       else:
+           print("Ievadi veltijumu ar VARDIEM:)<3")    
+    try:
+       self.izmers = int(input("Ievadi izmeru(veselu skaitli): "))
+    except:
+       print("Ievadi izmēru izmantojot tikai ciparus")
+    
+    while True:
+       self.materials = input("Ievadi izmantojamo materialu: ")
+       if all(x.isalpha() or x.isspace() for x in self.materials):
+           break
+       else:
+           print("Ievadi ar burtiem nevis skaitliem <3") 
 
 Klients1 = Klients1()
 
