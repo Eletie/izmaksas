@@ -1,25 +1,27 @@
 import biblioteka
 from datetime import datetime
+import csv
 
 
 print("Labriit! Esi atvēris 100% vislabāko darbu, ko vien varējām izdarīt. Šeit saņemsiet visu ko jūs norādījāt specifikācijā <3")
 
 
 class Rekins():
-  def __init__(self, klients, veltijums, izmers, materials, laiks, aprekins):
+  def __init__(self, klients, veltijums, materials, laiks, aprekins, garums, augstums, platums):
     self.klients = klients
     self.veltijums = veltijums
-    self.izmers = izmers
     self.materials = materials
     self.laiks = laiks
     self.aprekins = aprekins
+    self.garums = garums
+    self.augstums = augstums
+    self.platums = platums
     
   def RadaLaiku(self):
     currentDateAndTime = datetime.now()
-    print("The current date and time is", currentDateAndTime)
+    self.laiks = currentDateAndTime
 
-    currentTime = currentDateAndTime.strftime("%H:%M:%S")
-    print("The current time is", currentTime)
+    #self.laiks = currentDateAndTime.strftime("%H:%M:%S")
     
   def izdrukat(self):
     print("Rēķina info:\n","Vārds:", self.klients)
@@ -29,8 +31,8 @@ class Rekins():
     print(" Augstums:", self.augstums)
     print(" Materiāla cena:", self.materials)
     print(" Produkta cena:", self.aprekins)
+    print(" Laiks:", self.laiks)
     
-    #un tā turpinat talak ez es gulet.
 
   def aprekins(self):
     darba_samaksa = 15
@@ -58,7 +60,9 @@ class Rekins():
 
     
   def saglabat(self):
-    pass#saglaba visu csv, kas atrodas šaja class...
+    info = self.klients,self.veltijums,self.garums,self.platums,self.augstums,self.materials,self.aprekins,self.laiks,
+    with open('biblioteka.csv', 'w') as x:
+    x.write(info)
 
 
 class Klients1(Rekins):
@@ -107,14 +111,6 @@ class Klients1(Rekins):
         print("Ievadi kokmateriala cenu ar cipariem<3")    
 
     
-    
-
-     #šeit ir problēmas, mana problema ka laiku jāciklē, jo jā un tagad ievadīšanā problēma.jo kad ievadu nepareizi platumu viss man prasa uzreiz materialus, nav labi.
-
-
-  
-  
-
 Klients1 = Klients1() 
 
 Klients1.RadaLaiku()
@@ -123,10 +119,13 @@ Klients1.aprekins()
 
 Klients1.izdrukat()
 
-
+Klients1.saglabat()
 
 
 #Vieta, kur nolikt kursoru:    
 
 
 #es nezino ko darīt, sorry :(   #depresija #dead_inside #dumb_men
+#es griBU iet prom
+#WAKE UP WAKE UP WAKE UP
+#ANNA4LIFE
