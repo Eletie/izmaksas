@@ -1,4 +1,3 @@
-import biblioteka
 from datetime import datetime
 import csv
 
@@ -60,10 +59,19 @@ class Rekins():
 
     
   def saglabat(self):
-    info = self.klients,self.veltijums,self.garums,self.platums,self.augstums,self.materials,self.aprekins,self.laiks,
-    with open('biblioteka.csv', 'w') as x:
-    x.write(info)
-
+    filename = self.klients + ".csv"
+    with open(filename, 'w', newline='') as file:
+      writer = csv.writer(file)
+   
+      writer.writerow([self.klients])
+      writer.writerow([self.veltijums])
+      writer.writerow(self.garums)
+      writer.writerow(self.platums)
+      writer.writerow(self.augstums)
+      writer.writerow(self.materials)
+      writer.writerow([self.aprekins])
+      writer.writerow([self.laiks])
+      
 
 class Klients1(Rekins):
   def __init__(self):
@@ -117,9 +125,9 @@ Klients1.RadaLaiku()
 
 Klients1.aprekins()
 
-Klients1.izdrukat()
-
 Klients1.saglabat()
+
+Klients1.izdrukat()
 
 
 #Vieta, kur nolikt kursoru:    
